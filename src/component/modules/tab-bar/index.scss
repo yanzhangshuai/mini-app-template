@@ -1,0 +1,8 @@
+.tab-bar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .body {
+    flex: 1;
+  }
+}

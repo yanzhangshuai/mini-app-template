@@ -1,1 +1,2 @@
-# 小程序模板
+# Taro + Vue3 + Typescript template
+
