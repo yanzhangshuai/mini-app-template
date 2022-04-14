@@ -9,8 +9,8 @@
   </view>
 </template>
 <script setup lang="ts">
+import { useRouter } from '@/router';
 import { computed } from 'vue';
-import Taro from '@tarojs/taro';
 import { useTabBarStore } from '@/store/tab-bar';
 import styles from './index.scss';
 
@@ -19,13 +19,15 @@ interface ITabBarItem {
   path: string;
   icon?: string
 }
+
+const router = useRouter();
 const tabBarStore = useTabBarStore();
 
 
 const tabBarItems:Array<ITabBarItem> = [
-  { title: '首页', path: '/page/tab-bar/home/index', icon: 'home' },
-  { title: '购物车', path: '/page/tab-bar/cart/index', icon: 'cart' },
-  { title: '我的', path: '/page/tab-bar/my/index', icon: 'my' }
+  { title: '首页', path: '/page/main-package/tab-bar/home/index', icon: 'home' },
+  { title: '购物车', path: '/page/main-package/tab-bar/cart/index', icon: 'cart' },
+  { title: '我的', path: '/page/main-package/tab-bar/my/index', icon: 'my' }
 ];
 
 const activeIndex = computed(() => tabBarStore.activeIndex);
@@ -35,7 +37,7 @@ const onTabSwitch = (data: { tabTitle: string }) => {
   if (index === -1) return;
   tabBarStore.setActiveIndex(index);
 
-  Taro.switchTab({ url: tabBarItems[index].path });
+  router.switchTab(tabBarItems[index].path);
 };
 
 </script>

@@ -43,7 +43,6 @@
     "Android >= 4.1",
     "ios >= 8"
   ],
-  "author": "",
   "dependencies": {
     "@nutui/nutui-taro": "^3.1.18",
     "@pinia/plugin-debounce": "^0.0.2",

@@ -1,7 +1,7 @@
 <template>
   <tab-bar>
     <view :class="styles.index">
-      <view>
+      <view class="text-red-500!">
         <text>项目名称：</text>
         <text :class="styles.text">{{ $config.APP_NAME }}</text>
       </view>

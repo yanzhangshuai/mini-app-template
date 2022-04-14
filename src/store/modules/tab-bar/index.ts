@@ -1,10 +1,6 @@
 import { defineStore } from 'pinia';
 
-type TabBarState  = {
-  _activeIndex: number
-}
-
-export const useTabBarStore = defineStore<'tab-bar-store',TabBarState>('tab-bar-store',{
+export const useTabBarStore = defineStore('tab-bar-store',{
   state: () => ({ _activeIndex : 0 }),
 
   getters: {
